@@ -1,3 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
-System.Console.WriteLine("kuk");
+
+System.Console.WriteLine("dsdsds");
+
