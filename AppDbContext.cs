@@ -37,6 +37,29 @@ namespace Bibliotekssystem.Models
                 .WithMany(b => b.Loans) // En Book kan ha flera lån
                 .HasForeignKey(l => l.BookID); // BookID är främmande nyckel i Loan
 
+            // Lägg till seed-data för författare
+            modelBuilder.Entity<Author>().HasData(
+                new Author { AuthorID = 1, Name = "Astrid Lindgren", Nationality = "Svensk" },
+                new Author { AuthorID = 2, Name = "J.K. Rowling", Nationality = "Brittisk" }
+            );
+
+            // Lägg till seed-data för böcker
+            modelBuilder.Entity<Book>().HasData(
+                new Book { BookID = 1, Title = "Pippi Långstrump", ReleaseDate = new DateTime(1945, 5, 1) },
+                new Book { BookID = 2, Title = "Harry Potter och de vises sten", ReleaseDate = new DateTime(1997, 6, 26) }
+            );
+
+            // Lägg till seed-data för BookToAuthor (många-till-många relation)
+            modelBuilder.Entity<BookToAuthor>().HasData(
+                new BookToAuthor { BookID = 1, AuthorID = 1 },
+                new BookToAuthor { BookID = 2, AuthorID = 2 }
+            );
+
+            // Lägg till seed-data för lån
+            modelBuilder.Entity<Loan>().HasData(
+                new Loan { LoanID = 1, BookID = 1, LoanDate = new DateTime(2024, 11, 1), ReturnDate = new DateTime(2024, 11, 10) },
+                new Loan { LoanID = 2, BookID = 2, LoanDate = new DateTime(2024, 11, 5), ReturnDate = null }
+            );
         }
     }
 }

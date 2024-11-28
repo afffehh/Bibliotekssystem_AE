@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bibliotekssystem_AE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+25a1a8c9b1041f54826c23239018f5ef5e34becb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47f7e26374277dee5d31a5a347c766ba0af11658")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bibliotekssystem_AE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bibliotekssystem_AE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

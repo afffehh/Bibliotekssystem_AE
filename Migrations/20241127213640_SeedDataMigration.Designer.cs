@@ -4,6 +4,7 @@ using Bibliotekssystem.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bibliotekssystem_AE.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241127213640_SeedDataMigration")]
+    partial class SeedDataMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,14 +49,20 @@ namespace Bibliotekssystem_AE.Migrations
                         new
                         {
                             AuthorID = 1,
-                            Name = "Astrid Lindgren",
-                            Nationality = "Svensk"
+                            Name = "J.K. Rowling",
+                            Nationality = "British"
                         },
                         new
                         {
                             AuthorID = 2,
-                            Name = "J.K. Rowling",
-                            Nationality = "Brittisk"
+                            Name = "George R.R. Martin",
+                            Nationality = "American"
+                        },
+                        new
+                        {
+                            AuthorID = 3,
+                            Name = "Agatha Christie",
+                            Nationality = "British"
                         });
                 });
 
@@ -80,14 +89,20 @@ namespace Bibliotekssystem_AE.Migrations
                         new
                         {
                             BookID = 1,
-                            ReleaseDate = new DateTime(1945, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Pippi Långstrump"
+                            ReleaseDate = new DateTime(1997, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Harry Potter and the Philosopher's Stone"
                         },
                         new
                         {
                             BookID = 2,
-                            ReleaseDate = new DateTime(1997, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Harry Potter och de vises sten"
+                            ReleaseDate = new DateTime(1996, 8, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "A Game of Thrones"
+                        },
+                        new
+                        {
+                            BookID = 3,
+                            ReleaseDate = new DateTime(1934, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Murder on the Orient Express"
                         });
                 });
 
@@ -115,6 +130,11 @@ namespace Bibliotekssystem_AE.Migrations
                         {
                             BookID = 2,
                             AuthorID = 2
+                        },
+                        new
+                        {
+                            BookID = 3,
+                            AuthorID = 3
                         });
                 });
 
@@ -147,13 +167,14 @@ namespace Bibliotekssystem_AE.Migrations
                             LoanID = 1,
                             BookID = 1,
                             LoanDate = new DateTime(2024, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ReturnDate = new DateTime(2024, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            ReturnDate = new DateTime(2024, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             LoanID = 2,
                             BookID = 2,
-                            LoanDate = new DateTime(2024, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            LoanDate = new DateTime(2024, 11, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ReturnDate = new DateTime(2024, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
